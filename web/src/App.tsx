@@ -5,7 +5,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <div style={{flex:1,backgroundColor:"#021f4b"}}>
       <Habit completed={3} />
       <Habit completed={3} />
       <Habit completed={10} />
