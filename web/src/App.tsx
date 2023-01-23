@@ -1,16 +1,16 @@
-import { useState } from "react";
 import "./styles/global.css";
-import { Habit } from "./components/Habit";
-function App() {
-  const [count, setCount] = useState(0);
+// import { Habit } from "./components/Habit";
+
+export function App() {
 
   return (
-    <div style={{flex:1,backgroundColor:"#021f4b"}}>
-      <Habit completed={3} />
-      <Habit completed={3} />
-      <Habit completed={10} />
+    <div className="w-screen h-screen flex justify-center items-center">
+      <div className="w-full max-w-5xl px-6 flex flex-col gap-16"> 
+      
+      </div>
+      
     </div>
   );
 }
 
-export default App;
+

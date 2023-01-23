@@ -7,3 +7,9 @@ INSTALL:
 fastify
 npm i @fastify/cors
 -
+
+Biblioteca "zod" para validação 
+npm i zod
+
+biblioteca "dayjs" para trabalhar com datas
+npm i dayjs
