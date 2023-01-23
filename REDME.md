@@ -13,3 +13,6 @@ npm i zod
 
 biblioteca "dayjs" para trabalhar com datas
 npm i dayjs
+
+biblioteca de inones "phosphor-react"
+npm i phosphor-react
