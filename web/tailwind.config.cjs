@@ -6,8 +6,8 @@ module.exports = {
       colors: {
         background: "#09090a",
       },
-      gridTemplateRowns: {
-        7: "repeat(7,, minmax(0, 1fr",
+      gridTemplateRows: {
+        7: "repeat(7, minmax(0, 1fr))",
       },
     },
   },
