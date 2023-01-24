@@ -16,3 +16,11 @@ npm i dayjs
 
 biblioteca de inones "phosphor-react"
 npm i phosphor-react
+
+MOBILE -
+
+biblioteca nativewind - estilização css
+
+npm i nativewind
+
+npm i tailwindcss --save-dev
