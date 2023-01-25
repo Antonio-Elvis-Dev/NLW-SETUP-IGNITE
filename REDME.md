@@ -24,3 +24,6 @@ biblioteca nativewind - estilização css
 npm i nativewind
 
 npm i tailwindcss --save-dev
+
+npx expo install 'react-native-svg'
+npm i react-native-svg-transformer --save-dev

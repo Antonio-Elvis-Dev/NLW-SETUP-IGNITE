@@ -9,6 +9,9 @@ import {
 } from "@expo-google-fonts/inter";
 
 import Loading from "./src/components/Loading";
+import Routes from "./src/routes/routes";
+
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   const [fonstLoaded] = useFonts({
@@ -23,28 +26,13 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        Open up App.tsx to start working on your app!
-      </Text>
+    <NavigationContainer>
+      <Routes />
       <StatusBar
         barStyle={"light-content"}
         backgroundColor="transparent"
         translucent
       />
-    </View>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#09090a",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    color: "#fff",
-    fontFamily: "Inter_800ExtraBold",
-  },
-});
