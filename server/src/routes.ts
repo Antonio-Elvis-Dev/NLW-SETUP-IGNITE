@@ -68,4 +68,34 @@ export async function appRoutes(app: FastifyInstance) {
     });
     return { possibleHabits, completedHabits };
   });
+
+  app.patch("/habits/:id/toggle", async (request) => {
+    const toggleHabitParams = z.object({
+      id: z.string().uuid(),
+    });
+    const { id } = toggleHabitParams.parse(request.params);
+    const today = dayjs().startOf("day").toDate(); // TODO salva so o dia
+
+    let day = await prisma.day.findUnique({
+      where: {
+        date: today,
+      },
+    });
+    
+    if (!day) {
+      day = await prisma.day.create({
+        data: {
+          date: today,
+        },
+      });
+    }
+
+    // TODO: completa o Habito
+await prisma.dayHabit.create({
+  data:{
+    day_id : day.id,
+    habit_id : id,
+  }
+})
+  });
 }
