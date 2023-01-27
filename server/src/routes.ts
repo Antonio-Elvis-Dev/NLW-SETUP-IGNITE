@@ -81,7 +81,7 @@ export async function appRoutes(app: FastifyInstance) {
         date: today,
       },
     });
-    
+
     if (!day) {
       day = await prisma.day.create({
         data: {
@@ -90,12 +90,57 @@ export async function appRoutes(app: FastifyInstance) {
       });
     }
 
-    // TODO: completa o Habito
-await prisma.dayHabit.create({
-  data:{
-    day_id : day.id,
-    habit_id : id,
-  }
-})
+    const dayHabit = await prisma.dayHabit.findUnique({
+      where: {
+        day_id_habit_id: {
+          day_id: day.id,
+          habit_id: id,
+        },
+      },
+    });
+    if (dayHabit) {
+      //TODO remover a marcação
+
+      await prisma.dayHabit.delete({
+        where: {
+          id: dayHabit.id,
+        },
+      });
+    } else {
+      // TODO: completa o Habito
+      await prisma.dayHabit.create({
+        data: {
+          day_id: day.id,
+          habit_id: id,
+        },
+      });
+    }
+  });
+
+  app.get("/summary", async () => {
+    const summary = await prisma.$queryRaw`
+    
+    SELECT 
+      D.id,
+      D.date,
+      (
+        SELECT 
+        cast( count(*)as float) 
+        FROM day_habits DH
+        WHERE DH.day_id = D.id
+      ) as completed,
+      (
+        SELECT
+        cast(count(*)as float)
+        FROM habit_week_days HWD
+        JOIN habits H
+        ON H.id = HWD.habit_id
+        WHERE
+        HWD.week_day = cast(strftime('%W', D.date/1000.0,'unixepoch')as int)
+        AND h.created_at <= D.date
+      )as amount
+    FROM days D 
+    `;
+    return summary;
   });
 }

@@ -14,8 +14,14 @@ npm i zod
 biblioteca "dayjs" para trabalhar com datas
 npm i dayjs
 
+WEB -
+
 biblioteca de inones "phosphor-react"
 npm i phosphor-react
+
+biblioteca de acessibilidade - Radix ui
+
+npm install @radix-ui/react-dialog   ==> biblioteca de dialog
 
 MOBILE -
 
