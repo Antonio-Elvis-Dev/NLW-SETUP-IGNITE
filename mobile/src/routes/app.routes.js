@@ -1,11 +1,12 @@
-import { View, Text } from "react-native";
 import React from "react";
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import {Home} from "../screens/Home";
+import { New } from "../screens/New";
+import { Habit } from "../screens/Habit";
 
-export default function Routes() {
+export function AppRoutes() {
   const Stack = createNativeStackNavigator();
 
   return (
@@ -13,6 +14,16 @@ export default function Routes() {
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="New"
+        component={New}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Habit"
+        component={Habit}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

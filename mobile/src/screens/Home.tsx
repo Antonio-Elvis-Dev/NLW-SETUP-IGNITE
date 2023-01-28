@@ -4,6 +4,7 @@ import { Header } from "../components/Header";
 import { DAY_SIZE, HabitDay } from "../components/HabirDay";
 import { generateRangeDatesFromYearStart } from "../utils/generate-range-dates-from-year-start";
 
+
 const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"];
 
 const datesFromYearStart = generateRangeDatesFromYearStart();

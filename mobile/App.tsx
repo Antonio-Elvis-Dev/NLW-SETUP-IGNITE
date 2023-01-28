@@ -1,4 +1,4 @@
-import './src/lib/dayjs'
+import "./src/lib/dayjs";
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 
 import {
@@ -9,10 +9,9 @@ import {
   Inter_800ExtraBold,
 } from "@expo-google-fonts/inter";
 
-import Loading from "./src/components/Loading";
-import Routes from "./src/routes/routes";
+import {Loading} from "./src/components/Loading";
+import { Routes } from "./src/routes/index";
 
-import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   const [fonstLoaded] = useFonts({
@@ -27,13 +26,13 @@ export default function App() {
   }
 
   return (
-    <NavigationContainer>
+    <>
       <Routes />
       <StatusBar
         barStyle={"light-content"}
         backgroundColor="transparent"
         translucent
       />
-    </NavigationContainer>
+    </>
   );
 }
