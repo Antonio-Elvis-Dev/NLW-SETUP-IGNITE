@@ -46,7 +46,7 @@ export function New() {
           Qual seu comprometimento?
         </Text>
 
-        <TextInput className="h-12 pl-4 rounded-lg mt-3 bg-zinc-800 text-white focus:border-2 focus:border-gray-600" placeholder="Exercícios, dormir cedo..." placeholderTextColor={colors.zinc[400]} />
+        <TextInput className="h-12 pl-4 rounded-lg mt-3 bg-zinc-900 text-white border-2 border-zinc-800  focus:border-gray-600" placeholder="Exercícios, dormir cedo..." placeholderTextColor={colors.zinc[400]} />
 
         <Text className="font-semibold mt-4 text-white text-base">
           Qual a recorrência?
@@ -54,8 +54,9 @@ export function New() {
 
         {avaliableWeekDays.map((weekDay, i) => (
           <CheckBox
+
             key={weekDay}
-            title={weekDay}
+             title={weekDay}
             checked={weekDays.includes(i)}
             onPress={() => handleToggleWeekDay(i)}
           />
